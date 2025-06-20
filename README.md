@@ -1,4 +1,4 @@
-#Testing adding a change for the sake of it
+#Testing adding a change for the sake of it part 2
 
 # TimeSheet Manager
 This project is a simple time sheet manager application. It allows users to log in to the application and add time sheet entries. Users can log in as either standard or admin users with admin users being able to create new timesheets, users and view reports.
