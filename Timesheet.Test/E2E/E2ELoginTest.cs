@@ -13,7 +13,10 @@ public class E2ELoginTest
    public void TestLoginReturnsCorrectPage()
    {
        new DriverManager().SetUpDriver(new ChromeConfig());
-       IWebDriver _webDriver = new ChromeDriver();
+       ChromeOptions options = new ChromeOptions();
+       options.AddArguments("--headless");
+
+       IWebDriver _webDriver = new ChromeDriver(options);
 
        _webDriver.Navigate().GoToUrl("http://localhost:8080");
 
