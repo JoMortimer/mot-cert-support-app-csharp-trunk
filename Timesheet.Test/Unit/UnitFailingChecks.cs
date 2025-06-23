@@ -19,8 +19,8 @@ public class UnitFailingChecks
     public void testIncorrectLogin()
     {
         // Mocks the behavior of authDB.checkLogin() method for a fake login attempt.
-        _authDBMock.Setup(authDBMock => _authDBMock.CheckLogin(It.IsAny<string>(), It.IsAny<string>())).Return(new LoginResult(false, null, 0));
-        
+        _authDBMock.Setup(authDBMock => _authDBMock.CheckLogin(It.IsAny<string>(), It.IsAny<string>())).Returns(new LoginResult(false, null, 0));
+
         // Calls the login method of authService with fake credentials.
         _authService = new AuthService(_authDBMock.Object);
         (int code, Credentials credentials) = _authService.Login("admin@test.com", "password123");
