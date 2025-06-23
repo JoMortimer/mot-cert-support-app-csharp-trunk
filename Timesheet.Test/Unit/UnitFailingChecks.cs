@@ -34,11 +34,11 @@ public class UnitFailingChecks
     public void testValidTokenReturnsOk()
     {
         // Mocks the behavior of authDB.checkSession() method for a valid session token.
-        _authDBMock.Setup(_authDBMock => _authDBMock.CheckSession("abc123", DateTime.Parse("3001-01-01"))).Returns(true);
+        _authDBMock.Setup(_authDBMock => _authDBMock.CheckSession("abc123", DateTime.Parse("2025-06-23"))).Returns(true);
 
         // Calls the validate method of authService with a token and date.
         _authService = new AuthService(_authDBMock.Object);
-        bool response = _authService.CheckSession("abc", DateTime.Parse("3001-01-01"));
+        bool response = _authService.CheckSession("abc", DateTime.Parse("2025-06-23"));
 
         // Asserts that the response from authService.validate() is true.
         Assert.That(response, Is.True);
